@@ -7,25 +7,42 @@ UV = uv
 SRC = src
 
 # ===============================
+# Phony targets
+# ===============================
+.PHONY: install run debug clean lint lint-strict
+
+# ===============================
 # Install dependencies
 # ===============================
 install:
-	$(UV) sync
+	@if command -v $(UV) >/dev/null 2>&1; then \
+		$(UV) sync; \
+	else \
+		echo "uv not found, skipping install"; \
+	fi
 
 # ===============================
 # Run project
 # ===============================
 run:
-	$(UV) run python -m $(SRC)
+	@if command -v $(UV) >/dev/null 2>&1; then \
+		$(UV) run $(PYTHON) -m $(SRC); \
+	else \
+		$(PYTHON) -m $(SRC); \
+	fi
 
 # ===============================
-# Debug mode (with pdb)
+# Debug mode
 # ===============================
 debug:
-	$(UV) run python -m pdb -m $(SRC)
+	@if command -v $(UV) >/dev/null 2>&1; then \
+		$(UV) run $(PYTHON) -m pdb -m $(SRC); \
+	else \
+		$(PYTHON) -m pdb -m $(SRC); \
+	fi
 
 # ===============================
-# Clean cache files
+# Clean cache
 # ===============================
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
@@ -36,17 +53,32 @@ clean:
 # Lint (flake8 + mypy)
 # ===============================
 lint:
-	$(UV) run flake8 .
-	$(UV) run mypy . \
-		--warn-return-any \
-		--warn-unused-ignores \
-		--ignore-missing-imports \
-		--disallow-untyped-defs \
-		--check-untyped-defs
+	@if command -v $(UV) >/dev/null 2>&1; then \
+		$(UV) run flake8 .; \
+		$(UV) run mypy . \
+			--warn-return-any \
+			--warn-unused-ignores \
+			--ignore-missing-imports \
+			--disallow-untyped-defs \
+			--check-untyped-defs; \
+	else \
+		flake8 .; \
+		mypy . \
+			--warn-return-any \
+			--warn-unused-ignores \
+			--ignore-missing-imports \
+			--disallow-untyped-defs \
+			--check-untyped-defs; \
+	fi
 
 # ===============================
-# Strict lint (optional)
+# Strict lint
 # ===============================
 lint-strict:
-	$(UV) run flake8 .
-	$(UV) run mypy . --strict
+	@if command -v $(UV) >/dev/null 2>&1; then \
+		$(UV) run flake8 .; \
+		$(UV) run mypy . --strict; \
+	else \
+		flake8 .; \
+		mypy . --strict; \
+	fi
