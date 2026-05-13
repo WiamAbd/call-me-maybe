@@ -31,5 +31,20 @@
   },
   {
     "prompt": "Substitute the word 'cat' with 'dog' in 'The cat sat on the mat with another cat'"
+  },
+  {
+    "prompt": "What is the sum of and ?"
+  },
+  {
+    "prompt": "Calculate the square root of 3 thousands"
+  },
+  {
+    "prompt": "Reverse the string ''"
+  },
+  {
+    "prompt": "greet"
+  },
+  {
+    "prompt": ""
   }
 ]
