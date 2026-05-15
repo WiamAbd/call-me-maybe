@@ -1,13 +1,19 @@
 [
   {
     "prompt": "What is the sum of 2 and 3?",
-    "name": "",
-    "parameters": {}
+    "name": "fn_add_numbers",
+    "parameters": {
+      "a": 2.0,
+      "b": 3.0
+    }
   },
   {
     "prompt": "What is the sum of 265 and 345?",
-    "name": "",
-    "parameters": {}
+    "name": "fn_add_numbers",
+    "parameters": {
+      "a": 265.0,
+      "b": 345.0
+    }
   },
   {
     "prompt": "Greet shrek",
@@ -53,27 +59,38 @@
   },
   {
     "prompt": "Replace all numbers in \"Hello 34 I'm 233 years old\" with NUMBERS",
-    "name": "",
-    "parameters": {}
+    "name": "fn_substitute_string_with_regex",
+    "parameters": {
+      "source_string": "Hello 34 I'm 233 years old",
+      "regex": "([0-9]+)",
+      "replacement": ""
+    }
   },
   {
     "prompt": "Replace all vowels in 'Programming is fun' with asterisks",
     "name": "fn_substitute_string_with_regex",
     "parameters": {
       "source_string": "Programming is fun",
-      "regex": "[^aeiouAEIOU]",
-      "replacement": " *"
+      "regex": "([aeiouAEIOU])",
+      "replacement": "*"
     }
   },
   {
     "prompt": "Substitute the word 'cat' with 'dog' in 'The cat sat on the mat with another cat'",
-    "name": "",
-    "parameters": {}
+    "name": "fn_substitute_string_with_regex",
+    "parameters": {
+      "source_string": "The cat sat on the mat with another cat",
+      "regex": "cat",
+      "replacement": "dog"
+    }
   },
   {
     "prompt": "What is the sum of and ?",
-    "name": "",
-    "parameters": {}
+    "name": "fn_add_numbers",
+    "parameters": {
+      "a": 1.0,
+      "b": 2.0
+    }
   },
   {
     "prompt": "Calculate the square root of 3 thousands",
@@ -91,12 +108,17 @@
   },
   {
     "prompt": "greet",
-    "name": "",
-    "parameters": {}
+    "name": "fn_greet",
+    "parameters": {
+      "name": "greet"
+    }
   },
   {
     "prompt": "",
-    "name": "",
-    "parameters": {}
+    "name": "fn_add_numbers",
+    "parameters": {
+      "a": 10.0,
+      "b": 20.0
+    }
   }
 ]
