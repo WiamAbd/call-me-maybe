@@ -11,33 +11,45 @@
   },
   {
     "prompt": "Greet shrek",
-    "name": "",
-    "parameters": {}
+    "name": "fn_greet",
+    "parameters": {
+      "name": "shrek"
+    }
   },
   {
     "prompt": "Greet john",
-    "name": "",
-    "parameters": {}
+    "name": "fn_greet",
+    "parameters": {
+      "name": "john"
+    }
   },
   {
     "prompt": "Reverse the string 'hello'",
-    "name": "",
-    "parameters": {}
+    "name": "fn_reverse_string",
+    "parameters": {
+      "s": "hello"
+    }
   },
   {
     "prompt": "Reverse the string 'world'",
-    "name": "",
-    "parameters": {}
+    "name": "fn_reverse_string",
+    "parameters": {
+      "s": "world"
+    }
   },
   {
     "prompt": "What is the square root of 16?",
-    "name": "",
-    "parameters": {}
+    "name": "fn_get_square_root",
+    "parameters": {
+      "a": 16.0
+    }
   },
   {
     "prompt": "Calculate the square root of 144",
-    "name": "",
-    "parameters": {}
+    "name": "fn_get_square_root",
+    "parameters": {
+      "a": 144.0
+    }
   },
   {
     "prompt": "Replace all numbers in \"Hello 34 I'm 233 years old\" with NUMBERS",
@@ -46,8 +58,12 @@
   },
   {
     "prompt": "Replace all vowels in 'Programming is fun' with asterisks",
-    "name": "",
-    "parameters": {}
+    "name": "fn_substitute_string_with_regex",
+    "parameters": {
+      "source_string": "Programming is fun",
+      "regex": "[^aeiouAEIOU]",
+      "replacement": " *"
+    }
   },
   {
     "prompt": "Substitute the word 'cat' with 'dog' in 'The cat sat on the mat with another cat'",
@@ -61,13 +77,17 @@
   },
   {
     "prompt": "Calculate the square root of 3 thousands",
-    "name": "",
-    "parameters": {}
+    "name": "fn_get_square_root",
+    "parameters": {
+      "a": 3000.0
+    }
   },
   {
     "prompt": "Reverse the string ''",
-    "name": "",
-    "parameters": {}
+    "name": "fn_reverse_string",
+    "parameters": {
+      "s": ""
+    }
   },
   {
     "prompt": "greet",
